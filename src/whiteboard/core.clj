@@ -5,10 +5,8 @@
 
 (defn start-one! []
   (let [server (yada/listener
-                 ["/"
-                  [["hello" (yada/resource {:produces "text/plain"
-                                            :response "World!"})]
-                   [true (yada/as-resource nil)]]])]
+                 ["/" (yada/resource {:produces "text/plain"
+                                      :response "Hello World!"})])]
     (swap! servers conj server)))
 
 (defn shut-down! []
